@@ -72,11 +72,11 @@ export const YtLinkMeta = async (req: Request, res: Response) => {
     } else {
       console.error('❌ Download failed:', err);
     }
-    res.status(500).send('Failed to download video');
+    return res.status(500).send('Failed to download video');
   }
 }
 // const filter = stdOut.split('\n')
-res.status(200).json({
+return res.status(200).json({
   status: true,
   data: linkMetaArr
 });
